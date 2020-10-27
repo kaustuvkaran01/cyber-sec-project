@@ -1,18 +1,16 @@
 
 class payload:
-    def __init__(self, text= None, key = None, encrypted = None):
+    def __init__(self, text= str(), key = str(), encrypted = str()):
         self.text = text
         self.key = key
         self.encrypted = encrypted
     
     def encrypt(self):
-        self.encrypted = str()
         for i, char in enumerate(self.text):
             c = chr(ord(char) ^ i ^ ord(self.key[ i % len(self.key)]))
             self.encrypted += c
 
     def decrypt(self):
-        self.text = str()
         for i, char in enumerate(self.encrypted):
             c = chr(ord(char) ^ ord(self.key[ i % len(self.key)]) ^ i )
             self.text += c
