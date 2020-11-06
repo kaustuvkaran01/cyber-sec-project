@@ -30,7 +30,7 @@ if __name__ == "__main__":
     processedText = ""
 
     for i in vigenere_decrypt_cipher_text:
-        if i not in (punctuation + " "):
+        if i not in (punctuation + " " + "0123456789"):
             processedText += i
         else:
             processedTextList.append(processedText)

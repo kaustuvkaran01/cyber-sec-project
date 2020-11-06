@@ -35,7 +35,7 @@ if __name__ == "__main__":
     print(punctuation + " ")
 
     for i in string:
-        if i not in (punctuation + " "):
+        if i not in (punctuation + " " + "0123456789"):
             processedText += i
         else:
             processedTextList.append(processedText)
