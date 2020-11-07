@@ -1,7 +1,7 @@
 from string import punctuation
 
 
-def generateVigenereKey(string, key):
+def generateVigenereKeyEncryption(string, key):
     count = 0
     key = list(key)
     print(key)
@@ -15,7 +15,7 @@ def generateVigenereKey(string, key):
     return("" . join(key))
 
 
-def vcipherText(string, key):
+def vcipherTextEncryption(string, key):
     vigenere_cipher_text = []
     for i in range(len(string)):
         x = (ord(string[i]) + ord(key[i])) % 26
@@ -49,8 +49,8 @@ if __name__ == "__main__":
     result = ""
     for i in processedTextList:
         if i not in (punctuation+" "):
-            key = generateVigenereKey(i, keyword)
-            result += vcipherText(i, key)
+            key = generateVigenereKeyEncryption(i, keyword)
+            result += vcipherTextEncryption(i, key)
         else:
             result += i
 
